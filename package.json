@@ -10,6 +10,7 @@
     "test:coverage": "ng test --code-coverage",
     "test:headless": "ng test --code-coverage --browsers ChromeHeadless --watch false",
     "lint": "ng lint",
+    "lint:output": "tslint -p ./src/tslint.json -o ./reports/tslint-result.json -t json",
     "e2e": "ng e2e",
     "browser-sync": "browser-sync start --config bs-config.js",
     "start:bs": "concurrently -k \"npm run build:w\" \"npm run browser-sync\""

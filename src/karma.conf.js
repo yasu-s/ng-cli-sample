@@ -18,7 +18,7 @@ module.exports = function (config) {
             clearContext: false // leave Jasmine Spec Runner output visible in browser
         },
         coverageIstanbulReporter: {
-            dir: require('path').join(__dirname, '../coverage'),
+            dir: require('path').join(__dirname, '../reports/coverage'),
             reports: ['html', 'lcovonly'],
             fixWebpackSourcePaths: true
         },
@@ -40,7 +40,7 @@ module.exports = function (config) {
             }
         },
         junitReporter: {
-            outputDir: require('path').join(__dirname, '../dist/test'),
+            outputDir: require('path').join(__dirname, '../reports'),
             outputFile: 'test-results.xml',
             suite: '',
             useBrowserName: false
