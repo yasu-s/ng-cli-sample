@@ -10,7 +10,7 @@ import { DataModel } from './app.model';
 @Injectable({
     providedIn: 'root',
 })
-export class HeroService {
+export class AppService {
 
 // #region fields
 
@@ -19,7 +19,7 @@ export class HeroService {
 
 // #endregion
 
-// #region methods
+// #region constructor
 
     /**
      * コンストラクタ
@@ -36,7 +36,7 @@ export class HeroService {
      * @returns データモデル
      */
     getData(): Observable<DataModel> {
-        return this.http.get<DataModel>(this.URL, { withCredentials: true });
+        return this.http.get<DataModel>(this.URL);
     }
 
 // #endregion
