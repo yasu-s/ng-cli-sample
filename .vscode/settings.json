@@ -5,5 +5,10 @@
     "tslint.configFile": "tslint.json",
     "[markdown]": {
         "files.trimTrailingWhitespace": false
-    }
+    },
+    "[typescript]": {
+        "files.trimTrailingWhitespace": true
+    },
+    "editor.tabSize": 4,
+    "files.insertFinalNewline": true,
 }
