@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { CustomInterceptor } from './custom.interceptor';
+import { CustomInterceptor } from './ext';
 
 @NgModule({
     declarations: [
