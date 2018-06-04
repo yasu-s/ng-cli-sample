@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppService } from './app.service';
+import { DataModel } from './app.model';
 
 /**
  * サンプルコンポーネント
@@ -15,6 +16,9 @@ export class AppComponent {
 
     /** タイトル */
     title = 'app';
+
+    /** データ */
+    data: DataModel;
 
 // #endregion
 
@@ -36,6 +40,7 @@ export class AppComponent {
     onClick(): void {
         this.sevice.getData().subscribe(data => {
             if (data) {
+                this.data = data;
                 alert(`LoginName: ${data.name}`);
             }
         });

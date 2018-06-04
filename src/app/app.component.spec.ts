@@ -1,27 +1,25 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { TestBed, async } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { TestBed, async, fakeAsync, tick } from '@angular/core/testing';
+import { of } from 'rxjs';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
+import { DataModel } from './app.model';
 
 describe('AppComponent', () => {
-    let httpClient: HttpClient;
-    let httpTestingController: HttpTestingController;
-
+    let appServiceSpy;
     beforeEach(async(() => {
+        appServiceSpy = jasmine.createSpyObj('AppService', ['getData']);
+
         TestBed.configureTestingModule({
-            imports: [
-                HttpClientTestingModule
-            ],
             declarations: [
                 AppComponent
             ],
+            providers: [
+                { provide: AppService, useValue: appServiceSpy }
+            ]
         }).compileComponents();
-
-        httpClient = TestBed.get(HttpClient);
-        httpTestingController = TestBed.get(HttpTestingController);
     }));
+
     it('should create the app', async(() => {
         const fixture = TestBed.createComponent(AppComponent);
         const app = fixture.debugElement.componentInstance;
@@ -36,6 +34,25 @@ describe('AppComponent', () => {
         const fixture = TestBed.createComponent(AppComponent);
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
-        expect(compiled.querySelector('h1').textContent).toContain('Welcome to sample!');
+        expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
+    }));
+
+    it('onclick', fakeAsync(() => {
+        // setup
+        const fixture = TestBed.createComponent(AppComponent);
+        const app = fixture.componentInstance;
+        const data = new DataModel();
+        data.id = 1;
+        data.name = 'aaa';
+        appServiceSpy.getData.and.returnValue(of(data));
+
+        // exercise
+        app.onClick();
+        tick();
+
+        // verify
+        expect(app.data).toBeDefined();
+        expect(app.data.id).toBe(1);
+        expect(app.data.name).toBe('aaa');
     }));
 });
