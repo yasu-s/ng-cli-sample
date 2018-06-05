@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppService } from './app.service';
 import { DataModel } from './app.model';
+import { fizzBuzzOutput } from './ext/ext.test';
 
 /**
  * サンプルコンポーネント
@@ -38,6 +39,8 @@ export class AppComponent {
      * クリックイベント
      */
     onClick(): void {
+        fizzBuzzOutput(20);
+
         this.sevice.getData().subscribe(data => {
             if (data) {
                 this.data = data;
