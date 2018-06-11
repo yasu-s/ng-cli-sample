@@ -1,0 +1,8 @@
+{
+    "spec_dir": "dist/out-tsc/src",
+    "spec_files": [
+        "**/*[sS]pec.js"
+    ],
+    "helpers": [
+    ]
+}
