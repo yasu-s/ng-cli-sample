@@ -1,2 +1,3 @@
 /* tslint:disable */
-export { CustomInterceptor } from './custom.interceptor';
+export * from './custom.interceptor';
+export * from './log.interceptor';
