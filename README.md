@@ -1,44 +1,44 @@
-# Angular CLI サンプル
+# Angular CLI Sample  
 
-## npmスクリプト一覧
+## npm script
 
 <table>
 <tr>
-  <th>スクリプト</th>
-  <th>概要</th>
+  <th>script</th>
+  <th>overview</th>
 </tr>
 <tr>
   <td>build</td>
-  <td>ソースコードをビルドします。</td>
+  <td>Build the source code.</td>
 </tr>
 <tr>
   <td>start:bs</td>
   <td>
-    browser-sync で起動します。<br>  
-    ソースコードの変更を監視して、ビルドも実行します。
+    Start up with browser-sync.<br>  
+    Monitor changes in the source code and also run builds.
   </td>
 </tr>
 <tr>
   <td>test</td>
-  <td>単体テストを実行します。</td>
+  <td>Execute the unit test.</td>
 </tr>
 <tr>
   <td>test:headless</td>
   <td>
-    単体テストを実行します。(CI用)<br>  
-    JUnit形式のテスト結果ファイルを ./reports/test-results.xml に出力します。<br>  
-    コードカバレッジについても ./reports/coverage ディレクトリに出力します。  
+    Execute the unit test.(CI)<br>  
+    Output the JUnit format test result file to ./reports/test-results.xml.<br>  
+    For code coverage also output to the ./reports/coverage directory.  
   </td>
 </tr>
 <tr>
   <td>lint</td>
-  <td>TSLintを実行します。</td>
+  <td>Execute the tslint.</td>
 </tr>
 <tr>
   <td>lint:output</td>
   <td>
-    TSLintを実行します。(CI用)<br>   
-    TSLintの結果を ./reports/tslint-result.json に出力します。
+    Execute the tslint.(CI)<br>   
+    Output TSLint result to ./reports/tslint-result.json.
   </td>
 </tr>
 </table>
