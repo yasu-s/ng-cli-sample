@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { throwError } from 'rxjs';
 import { AppService } from './app.service';
 import { DataModel } from './app.model';
 import { fizzBuzzOutput } from './ext/ext.test';
@@ -49,17 +48,6 @@ export class AppComponent {
             }
         }, err => {
             console.log(err);
-        });
-    }
-
-    /**
-     * クリックイベント
-     */
-    onClick2(): void {
-        throwError({ name: 'aaa'}).toPromise().then(d => {
-            console.log(d);
-        }, e => {
-            console.log(e);
         });
     }
 
