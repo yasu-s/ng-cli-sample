@@ -1,5 +1,5 @@
 import { TestBed, async, fakeAsync, tick } from '@angular/core/testing';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
@@ -55,4 +55,26 @@ describe('AppComponent', () => {
         expect(app.data.id).toBe(1);
         expect(app.data.name).toBe('aaa');
     }));
+
+    it('service', (done: DoneFn) => {
+        // setup
+        const service = TestBed.get(AppService);
+        const data = new DataModel();
+        data.id = 1;
+        data.name = 'aaa';
+        appServiceSpy.getData.and.returnValue(throwError(data));
+        const spyReject = spyOn(Promise, 'reject').and.callThrough();
+
+        // exercise
+        service.getData().toPromise().then(_ => {})
+        .catch(err => {
+            return Promise.reject(err);
+        }).then(d => {
+            done.fail('error');
+        }, e => {
+            expect(spyReject).toHaveBeenCalled();
+            expect(spyReject).toHaveBeenCalledWith(data);
+            done();
+        });
+    });
 });
