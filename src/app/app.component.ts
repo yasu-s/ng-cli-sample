@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { filter } from 'rxjs/operators';
+
 import { AppService } from './app.service';
 import { DataModel } from './app.model';
 import { fizzBuzzOutput } from './ext/ext.test';
@@ -21,6 +23,8 @@ export class AppComponent {
     /** データ */
     data: DataModel;
 
+    cnt = 0;
+
 // #endregion
 
 // #region constructor
@@ -41,13 +45,17 @@ export class AppComponent {
     onClick(): void {
         fizzBuzzOutput(20);
 
-        this.sevice.getData().subscribe(data => {
+        this.cnt++;
+
+        this.sevice.getData().pipe(filter(() => this.cnt % 2 === 0)).subscribe(data => {
             if (data) {
                 this.data = data;
                 alert(`LoginName: ${data.name}`);
             }
         }, err => {
             console.log(err);
+        }, () => {
+            console.log('complete');
         });
     }
 
