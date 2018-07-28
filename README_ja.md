@@ -1,6 +1,38 @@
-# Angular CLI サンプル
+# 概要
 
-## npmスクリプト一覧
+Angular CLI の実行環境のサンプルです。 
+Angular CLI の基本スクリプトの他に以下の起動スクリプトを追加しています。  
+* Browsersync起動
+* 単体テスト実行(CI用)
+* TSLint実行(CI用)
+
+# 動作環境  
+
+* Node.js 8.x  
+* Angular 6.x  
+
+# 動作確認  
+
+## 1. サンプルのダウンロード
+
+```
+git clone git@github.com:yasu-s/ng-cli-sample.git
+```
+
+## 2. パッケージインストール  
+
+```
+cd ng-cli-sample
+npm install
+```
+
+## 3. サンプルの起動  
+
+```
+npm start
+```
+
+# NPM Script 一覧
 
 <table>
 <tr>
@@ -14,7 +46,7 @@
 <tr>
   <td>start:bs</td>
   <td>
-    browser-sync で起動します。<br>  
+    Browsersync で起動します。<br>  
     ソースコードの変更を監視して、ビルドも実行します。
   </td>
 </tr>
