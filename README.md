@@ -11,7 +11,7 @@ In addition to the basic script of Angular CLI, the following start script has b
 * Node.js 8.x  
 * Angular 6.x  
 
-# 動作確認  
+# Operation check  
 
 ## 1. Download Sample
 
