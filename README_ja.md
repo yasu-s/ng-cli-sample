@@ -9,7 +9,7 @@ Angular CLI の基本スクリプトの他に以下の起動スクリプトを�
 # 動作環境  
 
 * Node.js 8.x  
-* Angular 6.x  
+* Angular 7.x  
 
 # 動作確認  
 

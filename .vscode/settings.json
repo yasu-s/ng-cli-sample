@@ -9,8 +9,7 @@
     "[typescript]": {
         "files.trimTrailingWhitespace": true
     },
-    "editor.tabSize": 4,
+    "editor.tabSize": 2,
     "files.insertFinalNewline": true,
-    "typescript.tsdk": "node_modules\\typescript\\lib",
-    "jasmineExplorer.config": "jasmine.json"
+    "typescript.tsdk": "node_modules\\typescript\\lib"
 }

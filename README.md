@@ -9,7 +9,7 @@ In addition to the basic script of Angular CLI, the following start script has b
 # System requirements
 
 * Node.js 8.x  
-* Angular 6.x  
+* Angular 7.x  
 
 # Operation check  
 
