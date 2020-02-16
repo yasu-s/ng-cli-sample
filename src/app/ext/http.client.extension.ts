@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/htt
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
-declare module '@angular/common/http/src/client' {
+declare module '@angular/common/http/http' {
 
     interface HttpClient {
         /**
